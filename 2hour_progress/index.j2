@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://static.bookdna-cdn.com/book_dna_com/bundle.f09ae7c75af1.css">
+  <link rel="stylesheet" href="./custom.css">
+ <style>
+  *, *:before, *:after { box-sizing: border-box; }
+  body { 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    background: white;
+  }
+
+  /* HEADER */
+  .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 20px 60px;               /* Consistent side padding matching main content */
+  background: #E0EAFF;
+  border-bottom: 1px solid #d8e2ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1020;
+  
+}
+.header-start { 
+  display: flex; 
+  align-items: center; 
+  gap: 76px; 
+  flex-shrink: 0;
+}
+
+.header-center { 
+  flex: 1; 
+  max-width: 920px; 
+}
+
+.header-end {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+  .logo-link { display: flex; align-items: center; text-decoration: none; }
+  .feedback-btn {
+    background: #3b4b6d;
+    color: white !important;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: #eff4ff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .search-bar svg {
+    width: 20px;
+    height: 20px;
+    color: #65778C;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  .search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 1.2rem;
+    color: #65778C;
+  }
+  .search-bar input::placeholder { color: #aaa; }
+  .action-btn {
+    border-radius: 50px;
+    padding: 9px 20px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+  }
+  .add-tbr-btn { background: #33b261; }
+  .log-read-btn { background: #3b4b6d; }
+  .action-btn svg { width: 16px; height: 16px; }
+
+  /* MAIN LAYOUT */
+  .main-body { 
+    display: flex; 
+    flex: 1;
+  }
+
+  /* SIDEBAR - FIXED (does not scroll) */
+  .sidebar--double {
+    display: flex;
+    width: 450px;
+    flex-shrink: 0;
+    background: #EDF3FF;
+    position: fixed;           /* Fixed to viewport */
+    top: 90px;                 /* Below header */
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;          /* Sidebar itself can scroll if content is long */
+    z-index: 1000;
+  }
+
+  /* LEFT ICON RAIL */
+  .sidebar-rail {
+    width: 450px;
+    background: #E0EAFF;
+    border-right: 1px solid #d6e0ff;
+    padding: 1rem 0;
+  }
+  .rail-nav { list-style: none; padding: 0; margin: 0; }
+  .rail-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0;
+    font-size: 1.4rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .rail-link span {
+    font-weight: 600;
+    width: 100px;
+    text-align: center;
+  }
+  .rail-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    transition: background-color 0.25s ease;
+  }
+  .rail-link:hover .rail-icon-wrapper,
+  .rail-link--active .rail-icon-wrapper {
+    background: #5477B2;
+  }
+  .rail-link svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.25s ease;
+    stroke: #5477B2;
+  }
+  .rail-link:hover svg,
+  .rail-link--active svg {
+    stroke: white !important;
+    fill: white !important;
+  }
+  .rail-link:hover .rail-icon-wrapper {
+    transform: scale(1.05);
+  }
+
+  /* RIGHT CONTEXT SIDEBAR */
+  .sidebar-context {
+    width: 700px;
+    padding: 1.5rem 1.25rem;
+  }
+  .context-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    margin-top: 1.5rem;
+    margin-right: 0.7rem;
+    color: black;
+  }
+  .context-list { list-style: none; padding: 0; margin: 0; }
+  .context-item {
+    display: flex;
+    align-items: center;
+    padding: 11px 16px;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    margin-bottom: 6px;
+  }
+  .context-item svg {
+    color: #C7D7FE;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+  }
+  .context-item:hover,
+  .context-item--active {
+    background: #5477B2;
+    color: white;
+  }
+  .context-item:hover svg,
+  .context-item--active svg {
+    fill: white;
+  }
+  .context-hint {
+    font-size: 1rem;
+    color: #505F74;
+    margin-top: 1.5rem;
+  }
+
+  /* MAIN CONTENT - scrolls only vertically */
+  .main-content {
+    flex: 1;
+    margin-left: 450px;        /* Offset for fixed sidebar width */
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: white;
+    margin-top: 80px;         /* Offset for fixed header height */  
+  }
+
+  /* Consistent container padding */
+  .cont, .container-fluid {
+    max-width: 1400px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  /* Badge styling */
+  .badge.bg-light {
+    background-color: white !important;
+    border: 2px solid #65778C;
+    border-radius: 10px;
+    color: #65778C;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Title & text */
+  .display-5 { font-size: 3.25rem; line-height: 1.2; }
+  .lead { font-size: 1.4rem; font-weight: 400 !important; }
+  .main_title { display: flex; align-items: center; gap: 30px; }
+
+  /* Hide scrollbars */
+  .overflow-auto::-webkit-scrollbar { display: none; }
+  .overflow-auto { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Other styles */
+  .twin-card { border-radius: 1.25rem; background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 1.5rem; }
+  .dna-label { font-size: 0.875rem; color: #666; margin-bottom: 0.25rem; }
+  .dna-bar { height: 10px; border-radius: 5px; }
+  .book-cover-sm { width: 120px; height: 180px; object-fit: cover; }
+  .book-cover-lg { height: 260px; object-fit: cover; }
+  .icon-badge { font-size: 0.85rem; padding: 0.35rem 0.65rem; }
+  .upgrade-btn { border-radius: 50px; padding: 0.5rem 1.5rem; }
+</style>
+
+</head>
+<body>
+<header class="header">
+  <div class="header-start">
+    <a href="/" class="logo-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="71" height="64" fill="none" viewBox="0 0 41 34">
+        <path fill="#5477b2" d="M20.305 4.178c1.499-1.415 3.022-1.976 4.953-2.577a33.2 33.2 0 0 1 7.74-1.438C33.618.12 34.237.12 34.856.09c.41-.02.821-.074 1.232-.088.323-.011.708.018.95.26a.94.94 0 0 1 .23.46c.07.312.038.659.037.978l-.008 1.36c.702-.014 1.897-.115 2.548.121.298.108.555.324.683.617.081.186.114.39.122.591.021.519.006 1.043.006 1.562v11.363l.001 9.23c.002 1.566.057 3.146.007 4.71-.008.252-.023.517-.12.752-.174.416-.5.682-.907.843-.784.175-1.8.076-2.618.076l-8.688.038-2.758.003c-.49 0-1-.029-1.487.01-.613.05-1.082.537-1.634.755-.47.185-1.01.22-1.51.244-.821.04-2.036.074-2.784-.265-.489-.222-.904-.702-1.457-.757-.448-.045-.907-.033-1.357-.036l-1.754-.014-7.012-.012-3.297.005c-.699.005-1.456.092-2.145-.043a1.36 1.36 0 0 1-.668-.34c-.357-.336-.45-.816-.46-1.285-.015-.65.002-1.304.003-1.956L.012 25.6V13.997L.007 7.381V5.304c0-.362-.023-.74.009-1.1.024-.271.138-.576.334-.77.473-.472 1.275-.396 1.887-.39l1.125.013q.003-.663-.008-1.326c-.003-.31-.03-.643.019-.949.024-.15.067-.3.15-.429.134-.205.298-.289.53-.344.505-.032 1.027.064 1.532.089.587.029 1.173.04 1.76.092.731.066 1.459.185 2.186.288 2.646.374 5.727.91 8.165 2.004.944.423 1.805 1.05 2.608 1.696M5 27.574c3.677.12 7.5.577 10.976 1.827q1.127.395 2.16.996c.475.273 1.748 1.364 2.145 1.365.154 0 .306-.078.436-.153.2-.116.382-.277.564-.418.407-.315.82-.648 1.268-.903.628-.359 1.325-.619 2.007-.85 2.554-.866 5.38-1.388 8.06-1.632 1.022-.093 2.05-.091 3.07-.188l-.005-.447-.017-25.45c-1.408.001-2.814.139-4.209.309-1.01.123-2.025.246-3.024.442-2.11.413-5.32 1.341-6.873 2.903-.297.299-.708.913-1.164.924-.306.007-.575-.196-.78-.404-.38-.385-.709-.824-1.162-1.13-.647-.435-1.393-.731-2.119-1.008a24 24 0 0 0-3.512-1.07c-1.351-.29-2.728-.445-4.097-.625-.482-.063-.95-.198-1.43-.26-.757-.096-1.53-.106-2.292-.144zm-3.29 3.607h9.16l3.265-.029c.465-.004 1.098.038 1.54-.002l-.023-.01c-.44-.2-.948-.322-1.41-.456-2.415-.7-4.92-1.077-7.422-1.282q-.884-.065-1.77-.108c-.346-.02-.715-.016-1.054-.09-.261-.055-.496-.206-.595-.463-.15-.392-.065-2.635-.064-3.199l.003-4.565V4.767l-1.638-.001zM37.3 4.775l.003 15.795v5.275c0 .826.05 1.745-.006 2.555-.015.221-.065.433-.224.598-.184.191-.42.223-.67.256-.462.061-.933.068-1.398.09q-.754.031-1.504.098c-2.395.2-4.765.627-7.079 1.273-.48.136-1.012.252-1.468.454.573-.046 1.162-.02 1.738-.018l12.284.003-.007-17.556-.001-5.979q.013-1.422.004-2.846a97 97 0 0 0-1.673.002"></path>
+        <path fill="#5477b2" d="M24.698 5.793c.122-.008.247-.01.366.017a.83.83 0 0 1 .525.39c.45.75.21 2.42-.009 3.265-.525 2.027-2.079 3.218-3.792 4.225 1.165.72 2.329 1.545 2.959 2.807.491.984.587 2.311.238 3.355-.333.995-1.107 1.913-1.969 2.498a8.5 8.5 0 0 1-1.015.564c1.194.834 2.775 1.915 3.227 3.369.103.33.18.784.004 1.099a.6.6 0 0 1-.365.274 1 1 0 0 1-.725-.076c-.38-.22-.485-.797-.595-1.187l-3.805-.003c-.888 0-1.777-.013-2.665.028-.123.356-.228.903-.535 1.148-.176.14-.399.162-.614.132a.74.74 0 0 1-.534-.321c-.153-.253-.128-.573-.06-.849.418-1.679 1.936-2.743 3.34-3.579-1.074-.64-2.02-1.396-2.698-2.463-.592-.932-.66-2.024-.42-3.085.393-1.748 1.857-2.786 3.28-3.687-.72-.489-1.423-.935-2.054-1.542-1.192-1.147-1.934-2.627-1.96-4.298-.007-.532.002-1.436.411-1.834a.7.7 0 0 1 .536-.177c.23.015.472.115.62.297.294.36.073 1.067.02 1.494q1.867-.014 3.736-.001c.523.008 1.044.046 1.567.056q1.282.03 2.56-.054c.004-.47-.3-1.1-.06-1.526.11-.195.281-.273.486-.336m-1.365 4.322c.065-.003.09.007.137-.043.256-.272.48-.904.588-1.263a173 173 0 0 0-3.748-.026c-.996-.003-1.992-.02-2.987-.013l-.773.01c.167.468.364.9.61 1.332.882 0 1.766-.008 2.648.007.472.007.942.042 1.414.042.705 0 1.407-.037 2.11-.046m-6.256 8.542c.99-.012 1.98-.03 2.97.008 1.157.073 2.324.013 3.482-.017a3.7 3.7 0 0 0-.16-1.24c-.93 0-1.874-.037-2.8.014l-1.9.022c-.462.01-.944.045-1.404-.01-.108.409-.187.798-.188 1.223m3.317 3.409c.615-.354 1.244-.698 1.838-1.085.432-.324.728-.69 1.017-1.144q-2.905.024-5.81.002c.729 1.105 1.794 1.677 2.955 2.227m-.114-9.353c.443-.275.892-.544 1.328-.83.285-.19.58-.376.835-.605-1.395-.012-2.794.028-4.188-.012.49.591 1.37 1.047 2.025 1.447m2.258 12.534c-.64-.544-1.371-.988-2.124-1.36-.737.402-1.485.792-2.15 1.309a25 25 0 0 1 2.154.022c.702.073 1.416.005 2.12.029m-2.256-10.582c-.82.468-1.639.944-2.326 1.598q1.216-.001 2.434.022 1.117 0 2.235-.023a4.4 4.4 0 0 0-.512-.463c-.217-.166-1.618-1.109-1.808-1.134z"></path>
+      </svg>
+    </a>
+    <button class="feedback-btn rd-btn">Give Feedback</button>
+  </div>
+  <div class="header-center">
+    <div class="search-bar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 16 16"><path fill="#8494a8" d="M11.744 10.343a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.413l-3.85-3.85a1 1 0 0 0-.115-.1m.258-3.844A5.5 5.5 0 0 1 1.42 8.604a5.5 5.5 0 1 1 10.582-2.105"></path></svg>
+      <input type="text" placeholder="Search books..." readonly>
+    </div>
+  </div>
+  <div class="header-end">
+    <a href="#" class="action-btn add-tbr-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="-2 -2 16 16"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 2.5v7M2.5 6h7"></path></svg>
+      Add TBR
+    </a>
+    <a href="#" class="action-btn log-read-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="-2 -2 16 16"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 2.5v7M2.5 6h7"></path></svg>
+      Log Read
+    </a>
+    <div class="dropdown">
+      <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 34 34">
+          <path fill="#c7d7fe" stroke="#5477b2" stroke-width="2" d="M17 2c8.284 0 15 6.716 15 15 0 3.804-1.416 7.276-3.751 9.92-.812-1.485-2.012-2.543-3.675-3.22-1.944-.79-4.462-1.033-7.574-1.033-3.094 0-5.598.259-7.538 1.059-1.663.685-2.865 1.748-3.683 3.228A14.94 14.94 0 0 1 2 17C2 8.716 8.716 2 17 2Zm0 4.667a6.778 6.778 0 1 0 .001 13.556A6.778 6.778 0 0 0 17 6.667Z"></path>
+          <path fill="#c7d7fe" stroke="#5477b2" stroke-width="2" d="M33 17c0 8.837-7.163 16-16 16S1 25.837 1 17 8.163 1 17 1s16 7.163 16 16Z"></path>
+          <path stroke="#5477b2" stroke-width="2" d="M22.333 13.445a5.333 5.333 0 1 1-10.666 0 5.333 5.333 0 0 1 10.666 0Z"></path>
+          <path stroke="#5477b2" stroke-linecap="round" stroke-width="2" d="M6.625 28.556C7.935 25.161 10.891 24.11 17 24.11c6.162 0 9.116.992 10.409 4.444"></path>
+        </svg>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end header-user-dropdown__menu">
+        <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+        <li><a class="dropdown-item" href="/accounts/logout">Log out</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+
+<div class="main-body">
+  <aside class="sidebar sidebar--double">
+    <!-- LEFT ICON SIDEBAR -->
+    <nav class="sidebar-rail">
+      <ul class="rail-nav">
+  {% for item in primary_nav %}
+      <li>
+        <a href="{{ item.href }}" class="rail-link {% if item.active %}rail-link--active{% endif %}">
+          <div class="rail-icon-wrapper">
+            {{ item.icon | safe }}
+          </div>
+          <span>{{ item.title }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    </nav>
+
+
+    <!-- RIGHT CONTEXT SIDEBAR unchanged -->
+    <nav class="sidebar-context">
+  <h5 class="context-title">{{ secondary_title }}</h5>
+  <ul class="context-list">
+    {% for item in secondary_items %}
+    <li>
+      <a class="context-item {% if item.active %}context-item--active{% endif %}" href="{{ item.href }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 14 12" fill="none" class="me-2">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.38462C0 0.619911 0.626802 0 1.4 0H5.32664L7.1933 1.84615H12.6C13.3732 1.84615 14 2.46606 14 3.23077V10.6154C14 11.3801 13.3732 12 12.6 12H1.4C0.626802 12 0 11.3801 0 10.6154V1.38462Z" fill="currentColor"/>
+        </svg>
+        {{ item.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="context-hint">{{ secondary_hint }}</p>
+</nav>
+  </aside>
+
+
+
+
+
+<main class="main-content">
+  <!-- Top hero section matching the screenshot exactly -->
+  <div class="bg-white border-bottom">
+    <div class="cont py-5">
+      <div class="row">
+        <!-- Left: Title + Version -->
+
+        <div class="col-lg-8 main_title">
+          <h1 class="display-5 fw-bold mb-2">{{ page_title }}</h1>
+          <span class="badge bg-light px-3 py-2 rounded-pill">Beta version 0.1</span>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-10">
+          <p class="lead mb-4">{{ description }}</p>
+        </div>
+      </div>
+
+            <!-- Stats + Upgrade row -->
+      <div class="d-flex align-items-stretch gap-4">
+        <!-- Books Analyzed Card -->
+        <div class="flex-shrink-0">
+          <div class="card border-0 rounded-4" style="background-color: #F6F7F9;">
+            <div class="card-body d-flex align-items-center gap-3 py-4 px-4">
+              <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 19 19" fill="none">
+                  <path d="M2.375 6.53125L8.90625 10.6875L16.625 5.34375L10.0938 1.1875L2.375 6.53125Z" stroke="#65778C" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.375 6.53125V10.0938L8.90625 14.25L16.625 8.90625C15.9125 8.19375 15.7344 7.125 16.2094 6.23438L16.625 5.34375" stroke="#65778C" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.375 10.0938V13.6562L8.90625 17.8125L16.625 12.4688C15.9125 11.7562 15.7344 10.6875 16.2094 9.79688L16.625 8.90625" stroke="#65778C" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="mb-0 fw-bold fs-3">{{ stats.books_analyzed }}</h4>
+                <p class="text-muted fs-5 mb-0">books analyzed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Update Card -->
+        <div class="flex-shrink-0">
+          <div class="card border-0 rounded-4" style="background-color: #F6F7F9;">
+            <div class="card-body d-flex align-items-center gap-3 py-4 px-4">
+              <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="4" width="16" height="16" rx="3" stroke="#65778C" stroke-width="1.8"/>
+                  <path d="M8 2V6" stroke="#65778C" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M16 2V6" stroke="#65778C" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M4 10H20" stroke="#65778C" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <div>
+                <h5 class="mb-1 fw-semibold fs-4">January 1st (29 days 10 hours 36 minutes)</h5>
+                <p class="text-muted fs-5 mb-0">next Book Twin update</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upgrade Card -->
+        <div class="flex-shrink-0">
+          <div class="card border rounded-4" style="background-color: white; border-color: #EAECED !important;">
+            <div class="card-body d-flex flex-column justify-content-center py-4 px-4">
+              <h5 class="mb-3 fw-semibold fs-4" style="color: #5477B2;">Upgrade to Pro</h5>
+              <p class="fs-5 mb-0 opacity-90">for real-time updates and unlimited twins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional explanation text -->
+      <div class="row mt-5" style="width:1900px;">
+        <div class="col-lg-10">
+          <p class="mb-4" style="font-size:1.3rem; width:100%">
+            We analyzed the <strong>{{ stats.books_analyzed }} books</strong> in your log to find other readers who love what you love and dislike what you dislike. As we grow, your matches will improve, and your book recommendations will keep improving. We are on a quest to find you books you will love!
+          </p>
+        </div>
+      </div>
+
+      <!-- Privacy line -->
+      <div class="row mt-4">
+        <div class="col-lg-10">
+          <p class="text-muted d-flex align-items-center" style="font-size:1.2rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="me-2 flex-shrink-0">
+              <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+              <path d="M8 4.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5zm0 6a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/>
+            </svg>
+            Privacy: Your reading data is fully anonymized.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="py-5 mx-5">
+  <h2>{{ twins_section_title }}</h2>
+  <p class="mt-5 mb-5 fs-5">{{ twins_description }}</p>
+
+  {% for twin in book_twins %}
+  <div class="card twin-card mb-4">
+    <div class="card-body">
+      <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+        <h4 class="mb-0 fw-bold">Book Twin #{{ twin.rank }}</h4>
+        <div class="flex-grow-1">
+          <div class="dna-label">DNA match: {{ twin.dna_match }}</div>
+          <div class="progress dna-bar">
+            <div class="progress-bar {{ twin.dna_match_class }}" style="width: {% if twin.dna_match == 'High' %}90%{% else %}60%{% endif %};"></div>
+          </div>
+        </div>
+        <span class="text-muted">{{ twin.matching_books_count }} matching books</span>
+        {% for icon in twin.icons %}
+          <span class="d-flex align-items-center gap-1 badge bg-light text-dark border icon-badge rounded-pill px-3">
+            {{ icon | safe }}
+          </span>
+        {% endfor %}
+        <a href="#" class="ms-auto text-decoration-none fw-medium">See all {{ twin.matching_books_count }} matches &rarr;</a>
+      </div>
+      <div class="d-flex overflow-auto gap-4 pb-2">
+        {% for book in twin.matching_books %}
+        <div class="text-center flex-shrink-0" style="width: 140px;">
+          <img src="{{ book.cover_url }}" alt="{{ book.title }}" class="book-cover-sm rounded shadow-sm mb-2">
+          <p class="small fw-bold mb-1">{{ book.title }}</p>
+          <p class="small text-muted mb-1">{{ book.author }}</p>
+          <p class="small text-success">{{ book.status }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="text-center my-4">
+    <a href="#" class="text-decoration-none text-muted">Show more</a>
+  </div>
+
+  <h2>{{ loved_section_title }}</h2>
+  <div class="row row-cols-2 row-cols-md-4 g-4">
+    {% for book in loved_books %}
+    <div class="col">
+      <div class="card border-0 shadow-sm text-center h-100">
+        <img src="{{ book.cover_url }}" alt="{{ book.title }}" class="card-img-top book-cover-lg rounded-top">
+        <div class="card-body d-flex flex-column">
+          <h5 class="fw-bold mt-auto">{{ book.title }}</h5>
+          <p class="text-muted small">{{ book.author }}</p>
+          <p class="small mb-3">{{ book.crowned_by }}</p>
+          <div class="dropdown mt-auto">
+            <button class="btn btn-success btn-sm rounded-pill dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              + Add TBR
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Add to list</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

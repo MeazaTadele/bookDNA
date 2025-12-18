@@ -1,0 +1,111 @@
+{
+  "page_title": "My Book Twins",
+  "version":"Beta version 0.1",
+  "description": "How does this work? A Book Twin is someone who loves the books you love, and dislikes the books you dislike.",
+  "stats": {
+    "books_analyzed": 282,
+    "next_update": "January 1st (29 days 10 hours 36 minutes)"
+  },
+  "upgrade_button_text": "Upgrade to Pro for real-time updates and unlimited twins.",
+  "twins_section_title": "Meet your 10 Book Twins",
+  "twins_description": "These are your closest Book DNA matches (they love what you love, and dislike what you dislike).",
+  "loved_section_title": "What do your Book Twins love?",
+  "primary_nav": [
+    {
+      "title": "My TBR",
+      "href": "/tbr",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"19\" viewBox=\"0 0 19 19\" fill=\"none\"><path d=\"M2.375 6.53125L8.90625 10.6875L16.625 5.34375L10.0938 1.1875L2.375 6.53125Z\" stroke=\"#5477B2\" stroke-width=\"1.6\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M2.375 6.53125V10.0938L8.90625 14.25L16.625 8.90625C15.9125 8.19375 15.7344 7.125 16.2094 6.23438L16.625 5.34375\" stroke=\"#5477B2\" stroke-width=\"1.6\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M2.375 10.0938V13.6562L8.90625 17.8125L16.625 12.4688C15.9125 11.7562 15.7344 10.6875 16.2094 9.79688L16.625 8.90625\" stroke=\"#5477B2\" stroke-width=\"1.6\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+    },
+    {
+      "title": "My Log",
+      "href": "/log",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"11\" viewBox=\"0 0 15 11\" fill=\"none\"><path d=\"M13.9502 0.950195L5.59305 9.9502L0.950195 6.3502\" stroke=\"#5477B2\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+    },
+    {
+      "title": "Folders",
+      "href": "/folders",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"14\" viewBox=\"0 0 16 14\" fill=\"none\"><path d=\"M1.59961 0.900391H5.71191L7.58105 2.78711L7.8457 3.05371H14.4004C14.7787 3.05393 15.0996 3.36644 15.0996 3.76953V12.3848C15.0995 12.7878 14.7786 13.0994 14.4004 13.0996H1.59961C1.22134 13.0994 0.90047 12.7878 0.900391 12.3848V1.61523C0.90047 1.21221 1.22133 0.900606 1.59961 0.900391Z\" stroke=\"#5477B2\" stroke-width=\"1.8\"/></svg>"
+    },
+    {
+      "title": "My Book DNA",
+      "href": "/dna",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"17\" viewBox=\"0 0 14 17\" fill=\"none\"><path d=\"M0 0H1.75V1.7C1.75 2.924 2.345 3.9185 3.395 4.913C4.1475 5.6185 5.15375 6.2985 6.20375 6.97L4.6025 7.9815C3.73625 7.412 2.89625 6.8 2.1875 6.1285C0.93625 4.947 0 3.485 0 1.7V0ZM12.25 0H14V1.7C14 3.485 13.0638 4.947 11.8125 6.1285C10.5787 7.3015 9.00375 8.2705 7.4725 9.214C5.94125 10.166 4.45375 11.0925 3.395 12.087C2.345 13.0815 1.75 14.076 1.75 15.3V17H0V15.3C0 13.515 0.93625 12.053 2.1875 10.8715C3.42125 9.6985 4.99625 8.7295 6.5275 7.786C8.05875 6.834 9.54625 5.9075 10.605 4.913C11.655 3.9185 12.25 2.924 12.25 1.7V0ZM9.3975 9.0185C10.2638 9.588 11.1038 10.2 11.8125 10.8715C13.0638 12.053 14 13.515 14 15.3V17H12.25V15.3C12.25 14.076 11.655 13.0815 10.605 12.087C9.8525 11.3815 8.84625 10.7015 7.79625 10.03L9.3975 9.0185ZM2.625 0.85H11.375V1.7L11.3225 2.125H2.6775L2.625 1.7V0.85ZM3.22 3.4H10.78C10.57 3.689 10.325 3.9865 9.9925 4.301L9.54625 4.675H4.43625L4.0075 4.301C3.675 3.9865 3.43 3.689 3.22 3.4ZM4.45375 12.325H9.56375L9.9925 12.699C10.325 13.0135 10.57 13.311 10.78 13.6H3.22C3.43 13.311 3.675 13.0135 4.0075 12.699L4.45375 12.325ZM2.6775 14.875H11.3225L11.375 15.3V16.15H2.625V15.3L2.6775 14.875Z\" fill=\"#5477B2\"/></svg>"
+    },
+    {
+      "title": "My Book Twins",
+      "href": "/twins",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"26\" height=\"15\" viewBox=\"0 0 26 15\" fill=\"none\"><path d=\"M7.15853 13.6169C10.7254 13.6169 13.6169 10.7254 13.6169 7.15853C13.6169 3.59169 10.7254 0.700195 7.15853 0.700195C3.59169 0.700195 0.700195 3.59169 0.700195 7.15853C0.700195 10.7254 3.59169 13.6169 7.15853 13.6169Z\" fill=\"#5477B2\" stroke=\"white\" stroke-width=\"1.4\"/><path d=\"M7.15864 7.87636C8.34758 7.87636 9.31141 6.91252 9.31141 5.72358C9.31141 4.53463 8.34758 3.5708 7.15864 3.5708C5.96969 3.5708 5.00586 4.53463 5.00586 5.72358C5.00586 6.91252 5.96969 7.87636 7.15864 7.87636Z\" fill=\"#5477B2\" stroke=\"white\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M11.4641 11.9708C11.2102 11.2079 10.6505 10.5338 9.87209 10.0529C9.09364 9.57215 8.13982 9.31152 7.15858 9.31152C6.17735 9.31152 5.22353 9.57215 4.44506 10.0529C3.6666 10.5338 3.10699 11.2079 2.85303 11.9708\" fill=\"#5477B2\"/><path d=\"M11.4641 11.9708C11.2102 11.2079 10.6505 10.5338 9.87209 10.0529C9.09364 9.57215 8.13982 9.31152 7.15858 9.31152C6.17735 9.31152 5.22353 9.57215 4.44506 10.0529C3.6666 10.5338 3.10699 11.2079 2.85303 11.9708\" stroke=\"white\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M18.1585 13.6169C21.7254 13.6169 24.6169 10.7254 24.6169 7.15853C24.6169 3.59169 21.7254 0.700195 18.1585 0.700195C14.5917 0.700195 11.7002 3.59169 11.7002 7.15853C11.7002 10.7254 14.5917 13.6169 18.1585 13.6169Z\" fill=\"#5477B2\" stroke=\"white\" stroke-width=\"1.4\"/><path d=\"M18.1586 7.87636C19.3476 7.87636 20.3114 6.91252 20.3114 5.72358C20.3114 4.53463 19.3476 3.5708 18.1586 3.5708C16.9697 3.5708 16.0059 4.53463 16.0059 5.72358C16.0059 6.91252 16.9697 7.87636 18.1586 7.87636Z\" fill=\"#5477B2\" stroke=\"white\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M22.4641 11.9708C22.2102 11.2079 21.6505 10.5338 20.8721 10.0529C20.0936 9.57215 19.1398 9.31152 18.1586 9.31152C17.1773 9.31152 16.2235 9.57215 15.4451 10.0529C14.6666 10.5338 14.107 11.2079 13.853 11.9708\" fill=\"#5477B2\"/><path d=\"M22.4641 11.9708C22.2102 11.2079 21.6505 10.5338 20.8721 10.0529C20.0936 9.57215 19.1398 9.31152 18.1586 9.31152C17.1773 9.31152 16.2235 9.57215 15.4451 10.0529C14.6666 10.5338 14.107 11.2079 13.853 11.9708\" stroke=\"white\" stroke-width=\"1.4\" stroke-linecap=\"round\"/></svg>",
+      "active": true
+    },
+    {
+      "title": "Stats",
+      "href": "/stats",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.00016 3.3335H15.0002C15.9206 3.3335 16.6668 4.07969 16.6668 5.00016V15.0002C16.6668 15.9206 15.9206 16.6668 15.0002 16.6668H5.00016C4.07969 16.6668 3.3335 15.9206 3.3335 15.0002V5.00016C3.3335 4.07969 4.07969 3.3335 5.00016 3.3335Z\" stroke=\"#5477B2\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M6.6665 14.1665L6.66658 9.1665\" stroke=\"#5477B2\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M10 14.1665L10.0001 6.6665\" stroke=\"#5477B2\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M13.333 14.1665L13.3331 11.6665\" stroke=\"#5477B2\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg>"
+    }
+  ],
+  "secondary_title": "My Book Twins",
+  "secondary_items": [
+    { "title": "My Book Twins", "href": "#", "active": true },
+    { "title": "Science Fiction Book Twins", "href": "#"},
+    { "title": "Historical Fiction Book Twins", "href": "#" },
+    { "title": "Astronomy Book Twins", "href": "#" },
+    { "title": "Dark Academia Book Twins", "href": "#" }
+  ],
+
+  "secondary_hint": "Unlock more once you read 10 books within that category.",
+  "book_twins": [
+    {
+      "rank": 1,
+      "dna_match": "High",
+      "dna_match_class": "bg-success",
+      "matching_books_count": 15,
+      "icons": [
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"13\" viewBox=\"0 0 17 13\" fill=\"none\"><path d=\"M16.1793 0.208768C16.0331 0.574113 15.9357 1.06994 15.9113 1.38309C15.5214 1.38309 15.2047 1.72234 15.2047 2.13987C15.2047 2.55741 15.5214 2.89666 15.9113 2.89666C15.96 2.89666 16.0088 2.89666 16.0575 2.87056C16.0088 3.99269 15.1559 4.87996 14.0838 4.87996C13.0117 4.87996 12.1589 3.99269 12.1101 2.87056C12.4269 2.81837 12.6949 2.50522 12.6949 2.13987C12.6949 1.72234 12.3782 1.38309 11.9883 1.38309H11.9152C11.8177 0.861169 11.5497 0.0260961 11.2329 0.0260961C10.9162 0.0260961 10.6481 0.835073 10.5507 1.38309C10.5019 1.38309 10.4532 1.35699 10.4045 1.35699C10.0146 1.35699 9.69785 1.69624 9.69785 2.11378C9.69785 2.47912 9.94152 2.79228 10.2826 2.87056C10.2339 3.99269 9.38109 4.87996 8.30897 4.87996C7.23684 4.87996 6.38402 3.9666 6.33528 2.84447C6.65205 2.76618 6.87134 2.47912 6.87134 2.11378C6.87134 1.69624 6.55458 1.35699 6.16472 1.35699H6.09162C5.99415 0.835073 5.72612 0 5.40936 0C5.09259 0 4.82456 0.808977 4.7271 1.35699C4.67836 1.35699 4.62963 1.3309 4.5809 1.3309C4.19103 1.3309 3.87427 1.67015 3.87427 2.08768C3.87427 2.47912 4.1423 2.79228 4.5078 2.84447C4.45906 3.9666 3.58187 4.85386 2.53411 4.85386C1.46199 4.85386 0.609162 3.9666 0.560429 2.84447C0.609162 2.84447 0.657895 2.87056 0.706628 2.87056C1.09649 2.87056 1.41326 2.53132 1.41326 2.11378C1.41326 1.69624 1.09649 1.35699 0.706628 1.35699H0.657895C0.609162 1.01775 0.536062 0.574113 0.438596 0.208768C0.365497 -0.0782881 0 -0.0260959 0 0.287056V12.5H16.6667V0.339248C16.6179 0.0260961 16.3012 -0.052192 16.1793 0.208768Z\" fill=\"#FFB636\"/></svg> x10",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"16\" viewBox=\"0 0 17 16\" fill=\"none\"><path d=\"M8.33333 15.2917L7.125 14.1917C2.83333 10.3 0 7.725 0 4.58333C0 2.00833 2.01667 0 4.58333 0C6.03333 0 7.425 0.675 8.33333 1.73333C9.24167 0.675 10.6333 0 12.0833 0C14.65 0 16.6667 2.00833 16.6667 4.58333C16.6667 7.725 13.8333 10.3 9.54167 14.1917L8.33333 15.2917Z\" fill=\"#E7402D\"/></svg> x5"
+    ],
+      "matching_books": [
+        { "title": "Dungeon Crawler Carl", "author": "Matt Dinniman", "status": "Crowned by both", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593820247" },
+        { "title": "Carl's Doomsday Scenario", "author": "Matt Dinniman", "status": "Crowned by both", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593820261" },
+        { "title": "The Dungeon Anarchist's Cookbook", "author": "Matt Dinniman", "status": "Loved by both", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593820285" },
+        { "title": "Killer of Men", "author": "Christian Cameron", "status": "Loved by both", "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Publication4/v4/37/fc/11/37fc11c5-830c-b53f-b228-f0a4c80c4bdc/9781409111924.jpg/1200x675wz.jpg" },
+        { "title": "The Gate of the Feral Gods", "author": "Matt Dinniman", "status": "Loved by both", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593955970" }
+      ]
+    },
+    {
+      "rank": 2,
+      "dna_match": "High",
+      "dna_match_class": "bg-success",
+      "matching_books_count": 11,
+      "icons": [
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"13\" viewBox=\"0 0 17 13\" fill=\"none\"><path d=\"M16.1793 0.208768C16.0331 0.574113 15.9357 1.06994 15.9113 1.38309C15.5214 1.38309 15.2047 1.72234 15.2047 2.13987C15.2047 2.55741 15.5214 2.89666 15.9113 2.89666C15.96 2.89666 16.0088 2.89666 16.0575 2.87056C16.0088 3.99269 15.1559 4.87996 14.0838 4.87996C13.0117 4.87996 12.1589 3.99269 12.1101 2.87056C12.4269 2.81837 12.6949 2.50522 12.6949 2.13987C12.6949 1.72234 12.3782 1.38309 11.9883 1.38309H11.9152C11.8177 0.861169 11.5497 0.0260961 11.2329 0.0260961C10.9162 0.0260961 10.6481 0.835073 10.5507 1.38309C10.5019 1.38309 10.4532 1.35699 10.4045 1.35699C10.0146 1.35699 9.69785 1.69624 9.69785 2.11378C9.69785 2.47912 9.94152 2.79228 10.2826 2.87056C10.2339 3.99269 9.38109 4.87996 8.30897 4.87996C7.23684 4.87996 6.38402 3.9666 6.33528 2.84447C6.65205 2.76618 6.87134 2.47912 6.87134 2.11378C6.87134 1.69624 6.55458 1.35699 6.16472 1.35699H6.09162C5.99415 0.835073 5.72612 0 5.40936 0C5.09259 0 4.82456 0.808977 4.7271 1.35699C4.67836 1.35699 4.62963 1.3309 4.5809 1.3309C4.19103 1.3309 3.87427 1.67015 3.87427 2.08768C3.87427 2.47912 4.1423 2.79228 4.5078 2.84447C4.45906 3.9666 3.58187 4.85386 2.53411 4.85386C1.46199 4.85386 0.609162 3.9666 0.560429 2.84447C0.609162 2.84447 0.657895 2.87056 0.706628 2.87056C1.09649 2.87056 1.41326 2.53132 1.41326 2.11378C1.41326 1.69624 1.09649 1.35699 0.706628 1.35699H0.657895C0.609162 1.01775 0.536062 0.574113 0.438596 0.208768C0.365497 -0.0782881 0 -0.0260959 0 0.287056V12.5H16.6667V0.339248C16.6179 0.0260961 16.3012 -0.052192 16.1793 0.208768Z\" fill=\"#FFB636\"/></svg> x6",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"16\" viewBox=\"0 0 17 16\" fill=\"none\"><path d=\"M8.33333 15.2917L7.125 14.1917C2.83333 10.3 0 7.725 0 4.58333C0 2.00833 2.01667 0 4.58333 0C6.03333 0 7.425 0.675 8.33333 1.73333C9.24167 0.675 10.6333 0 12.0833 0C14.65 0 16.6667 2.00833 16.6667 4.58333C16.6667 7.725 13.8333 10.3 9.54167 14.1917L8.33333 15.2917Z\" fill=\"#E7402D\"/></svg> x4",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\"><g clip-path=\"url(#clip0_48903_23746)\"><path d=\"M20 0H0V20H20V0Z\" fill=\"white\" fill-opacity=\"0.01\"/><path d=\"M6.24984 3.33301C3.71853 3.33301 1.6665 5.38505 1.6665 7.91634C1.6665 12.4997 7.08317 16.6663 9.99984 17.6356C12.9165 16.6663 18.3332 12.4997 18.3332 7.91634C18.3332 5.38505 16.2811 3.33301 13.7498 3.33301C12.1997 3.33301 10.8293 4.10255 9.99984 5.28042C9.17038 4.10255 7.79996 3.33301 6.24984 3.33301Z\" fill=\"#65778C\"/><path d=\"M11.6668 8.33301L8.3335 11.6663\" stroke=\"white\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M8.3335 8.33301L11.6668 11.6663\" stroke=\"white\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><defs><clipPath id=\"clip0_48903_23746\"><rect width=\"20\" height=\"20\" fill=\"white\"/></clipPath></defs></svg> x1"
+    ],
+      "matching_books": [
+        { "title": "Dungeon Crawler Carl", "author": "Matt Dinniman", "status": "Crowned by both", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593820247" },
+        { "title": "He Who Fights with Monsters", "author": "Shirtaloon", "status": "Loved by both", "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f1/d7/d6/f1d7d642-f81a-e455-10a2-3cc9303dcb82/9781774248188.jpg/1200x900wf.jpg" }
+      ]
+    },
+    {
+      "rank": 3,
+      "dna_match": "Medium",
+      "dna_match_class": "bg-warning text-dark",
+      "matching_books_count": 8,
+      "icons": [
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"13\" viewBox=\"0 0 17 13\" fill=\"none\"><path d=\"M16.1793 0.208768C16.0331 0.574113 15.9357 1.06994 15.9113 1.38309C15.5214 1.38309 15.2047 1.72234 15.2047 2.13987C15.2047 2.55741 15.5214 2.89666 15.9113 2.89666C15.96 2.89666 16.0088 2.89666 16.0575 2.87056C16.0088 3.99269 15.1559 4.87996 14.0838 4.87996C13.0117 4.87996 12.1589 3.99269 12.1101 2.87056C12.4269 2.81837 12.6949 2.50522 12.6949 2.13987C12.6949 1.72234 12.3782 1.38309 11.9883 1.38309H11.9152C11.8177 0.861169 11.5497 0.0260961 11.2329 0.0260961C10.9162 0.0260961 10.6481 0.835073 10.5507 1.38309C10.5019 1.38309 10.4532 1.35699 10.4045 1.35699C10.0146 1.35699 9.69785 1.69624 9.69785 2.11378C9.69785 2.47912 9.94152 2.79228 10.2826 2.87056C10.2339 3.99269 9.38109 4.87996 8.30897 4.87996C7.23684 4.87996 6.38402 3.9666 6.33528 2.84447C6.65205 2.76618 6.87134 2.47912 6.87134 2.11378C6.87134 1.69624 6.55458 1.35699 6.16472 1.35699H6.09162C5.99415 0.835073 5.72612 0 5.40936 0C5.09259 0 4.82456 0.808977 4.7271 1.35699C4.67836 1.35699 4.62963 1.3309 4.5809 1.3309C4.19103 1.3309 3.87427 1.67015 3.87427 2.08768C3.87427 2.47912 4.1423 2.79228 4.5078 2.84447C4.45906 3.9666 3.58187 4.85386 2.53411 4.85386C1.46199 4.85386 0.609162 3.9666 0.560429 2.84447C0.609162 2.84447 0.657895 2.87056 0.706628 2.87056C1.09649 2.87056 1.41326 2.53132 1.41326 2.11378C1.41326 1.69624 1.09649 1.35699 0.706628 1.35699H0.657895C0.609162 1.01775 0.536062 0.574113 0.438596 0.208768C0.365497 -0.0782881 0 -0.0260959 0 0.287056V12.5H16.6667V0.339248C16.6179 0.0260961 16.3012 -0.052192 16.1793 0.208768Z\" fill=\"#FFB636\"/></svg> x4",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"16\" viewBox=\"0 0 17 16\" fill=\"none\"><path d=\"M8.33333 15.2917L7.125 14.1917C2.83333 10.3 0 7.725 0 4.58333C0 2.00833 2.01667 0 4.58333 0C6.03333 0 7.425 0.675 8.33333 1.73333C9.24167 0.675 10.6333 0 12.0833 0C14.65 0 16.6667 2.00833 16.6667 4.58333C16.6667 7.725 13.8333 10.3 9.54167 14.1917L8.33333 15.2917Z\" fill=\"#E7402D\"/></svg> x4"
+    ],
+      "matching_books": [
+        { "title": "The Butcher's Masquerade", "author": "Matt Dinniman", "status": "Crowned by both", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593955994" }
+      ]
+    }
+  ],
+  "loved_books": [
+    { "title": "Killer of Men", "author": "Christian Cameron", "crowned_by": "Crowned by 5 Book Twins", "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Publication4/v4/37/fc/11/37fc11c5-830c-b53f-b228-f0a4c80c4bdc/9781409111924.jpg/1200x675wz.jpg" },
+    { "title": "The Dungeon Anarchist's Cookbook", "author": "Matt Dinniman", "crowned_by": "Crowned by 4 Book Twins", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593820285" },
+    { "title": "Dungeon Crawler Carl", "author": "Matt Dinniman", "crowned_by": "Crowned by 2 Book Twins", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593820247" },
+    { "title": "Carl's Doomsday Scenario", "author": "Matt Dinniman", "crowned_by": "Crowned by 2 Book Twins", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593820261" },
+    { "title": "The Gate of the Feral Gods", "author": "Matt Dinniman", "crowned_by": "Crowned by 2 Book Twins", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593955970" },
+    { "title": "The Butcher's Masquerade", "author": "Matt Dinniman", "crowned_by": "Crowned by 2 Book Twins", "cover_url": "https://images.penguinrandomhouse.com/cover/9780593955994" }
+  ]
+}
